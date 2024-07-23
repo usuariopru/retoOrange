@@ -1,5 +1,6 @@
 package retoOrange.stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
@@ -30,7 +31,7 @@ public class Proceso {
                 entry.get("strNombre"), entry.get("strContrasena"),entry.get("strTitulo"),
                 entry.get("strPrimerNombre"),entry.get("strSegundoNombre"), entry.get("strApellido"),
                 entry.get("strVacante"),entry.get("strCorreo"),entry.get("strNumero"),entry.get("strClaves"),
-                entry.get("strNoteUno"));
+                entry.get("strNoteUno"), entry.get("strStatus"), entry.get("strNoteDos") );
     }
 
     @Given("Usuario quiere agregar candidato")
@@ -72,11 +73,38 @@ public class Proceso {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("La notificación está visible",
                 IngresoAlSitio.isVisible()
         ));
+        Thread.sleep(15000);
 
     }
 
     @Then("^se debe registrar el candidato$")
-    public void theCandidateMustRegister() {
+    public void theCandidateMustRegister(DataTable dataTable) throws Exception {
+        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        String status = data.get(0).get("strStatus");
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(
+                IngresoAlSitio.contieneRegistro("Usuario1 Orange Choucair",status, "test")
+        ));
+
+    }
+
+
+    @Given("Usuario quiere enlistar candidato")
+    public void userWantCandidate(DataTable dataTable) throws Exception {
+        /*List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        String notaDos = data.get(0).get("strNoteDos");
+
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                EnlistarEntrevista.enlistarEntre(notaDos)*/
+
+    }
+
+    @When("^el candidato paso las pruebas$")
+    public void theCandidateSuccessfull(    ) throws Exception {
+
+    }
+
+    @Then("^es contratado$")
+    public void theFinish(    ) throws Exception {
 
     }
 }

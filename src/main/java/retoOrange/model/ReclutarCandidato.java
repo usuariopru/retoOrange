@@ -5,20 +5,23 @@ public class ReclutarCandidato {
     private String  strNombre;
     private String  strContrasena;
     private String strTitulo;
-
+       private String strStatus;
     private String  strPrimerNombre;
     private String  strSegundoNombre;
     private String strApellido;
-
     private String  strVacante;
     private String  strCorreo;
     private String strNumero;
     private String  strClaves;
     private String  strNoteUno;
+    private String  strNoteDos;
+
+
 
 
     public ReclutarCandidato(String strNombre, String strContrasena, String strTitulo, String  strPrimerNombre, String  strSegundoNombre, String strApellido,
-                             String  strVacante, String  strCorreo, String strNumero, String  strClaves, String  strNoteUno) {
+                             String  strVacante, String  strCorreo, String strNumero, String  strClaves, String  strNoteUno, String strStatus,
+                             String  strNoteDos) {
         this.strNombre = strNombre;
         this.strContrasena = strContrasena;
         this.strTitulo = strTitulo;
@@ -30,8 +33,25 @@ public class ReclutarCandidato {
         this.strNumero = strNumero;
         this.strClaves = strClaves;
         this.strNoteUno = strNoteUno;
+        this.strStatus = strStatus;
+        this.strStatus = strNoteDos;
 
 
+    }
+
+    public String getStrNoteDos() {
+        return strNoteDos;
+    }
+
+    public void setStrNoteDos(String strNoteDos) {
+        this.strNoteDos = strNoteDos;
+    }
+    public String getStrStatus() {
+        return strStatus;
+    }
+
+    public void setStrStatus(String strStatus) {
+        this.strStatus = strStatus;
     }
 
     public String getStrPrimerNombre() {

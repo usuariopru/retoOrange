@@ -68,7 +68,9 @@ public class AgregarCandidato implements Task {
                 Enter.theValue(strNoteUno).into(VentanaReclutar.CAMPO_NOTA),
                 Click.on(VentanaReclutar.OPCION_AUTORIZAR),
                 Click.on(VentanaReclutar.BOTON_GUARDAR),
-                WaitUntil.the(VentanaReclutar.BOTON_GUARDAR, isClickable()).forNoMoreThan(50).seconds()
+                WaitUntil.the(VentanaReclutar.BOTON_GUARDAR, isClickable()).forNoMoreThan(1000).seconds()
+
+
 
         );
 

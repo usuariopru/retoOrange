@@ -16,6 +16,15 @@ Feature:  Reclutar un candidato
       | Admin     | admin123      | Dashboard |
     When ingrese datos al formulario
       | strPrimerNombre | strSegundoNombre | strApellido | strVacante     | strCorreo            | strNumero  | strClaves | strNoteUno |
-      | Usuario1        | Orange           | Choucair    | Senior QA Lead | vayatah263@padvn.com | 3012923869 | orange    |Exitoso     |
+      | Usuario1        | Orange           | Choucair    | Junior Account Assistant | vayatah263@padvn.com | 3012923869 | orange    |Exitoso     |
     And de clic en guardar
     Then se debe registrar el candidato
+      | strStatus                     |
+      | Status: Application Initiated |
+
+  @EnlistarCandidato
+  Scenario: Enlistar candidato
+    Given Usuario quiere enlistar candidato
+    When el candidato paso las pruebas
+    Then es contratado
+

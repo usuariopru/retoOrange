@@ -32,4 +32,10 @@ public class VentanaReclutar {
     public static final Target OPCION_AUTORIZAR = Target.the("Autorizar datos").located(By.xpath("//span[@data-v-6179b72a]"));
 
     public static final Target BOTON_GUARDAR = Target.the("Guardar CANDIDATO").locatedBy("//button[@class=\"oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space\"]");
+
+    public static final Target TABLA_CANDIDATOS = Target.the("tabla de candidatos").locatedBy("//div[@class=\"oxd-table-body oxd-card-table-body\"]");
+
+
+    public static final Target TOAST_NOTIFICATION = Target.the("toast notification").locatedBy("#oxd-toaster_1");
+
 }
